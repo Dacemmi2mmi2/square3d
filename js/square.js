@@ -34,8 +34,8 @@ const move = function moveSquare(){
         paramWidthScreen : 0,
     }
 
-    window.innerWidth >= 2000 ? variables.paramWidthScreen = 20 : '';
-    window.innerWidth >= 1500 && window.innerWidth < 2000 ? variables.paramWidthScreen = 10 : '';
+    window.innerWidth >= 1800 ? variables.paramWidthScreen = 20 : '';
+    window.innerWidth >= 1500 && window.innerWidth < 1800 ? variables.paramWidthScreen = 10 : '';
     window.innerWidth >= 900 && window.innerWidth < 1500 ? variables.paramWidthScreen = 7 : '';
     window.innerWidth >= 600 && window.innerWidth < 900 ? variables.paramWidthScreen = 5 : '';
     window.innerWidth < 600 ? variables.paramWidthScreen = 3 : '';
@@ -44,12 +44,37 @@ const move = function moveSquare(){
         paramsSquare(variables.rotateY, variables.rotateX, variables.rotateZ, variables.translateY, variables.translateX, variables.translateZ);
         if(variables.translateZ === -window.innerWidth){
             clearInterval(moveAxisZ);
-            // rotateSquare();
+            rotateSquare();
         }else{
             variables.translateZ -= variables.paramWidthScreen;
             window.innerWidth + variables.translateZ > variables.paramWidthScreen ? '' : variables.translateZ = -window.innerWidth;
         }
     }, 1);
+
+    function rotateSquare(){
+        let rotate = setInterval(() => {
+            paramsSquare(variables.rotateY, variables.rotateX, variables.rotateZ, variables.translateY, variables.translateX, variables.translateZ);
+            variables.translateZ += window.innerWidth * 1.5 / 90;
+            variables.translateX += window.innerWidth * 1.5 / 90;
+            variables.rotateY ++ ;
+            if(variables.rotateY === 90){
+                clearInterval(rotate);
+                moveXline();
+            }
+        }, 1);
+    }
+
+    function moveXline(){
+        let moveX = setInterval(() => {
+            paramsSquare(variables.rotateY, variables.rotateX, variables.rotateZ, variables.translateY, variables.translateX, variables.translateZ);
+            if(variables.translateX === window.innerWidth / 2){
+                clearInterval(moveX);
+            }else{
+                variables.translateX -= variables.paramWidthScreen;
+                variables.translateX - window.innerWidth / 2 < variables.paramWidthScreen ? variables.translateX = window.innerWidth / 2 : '';
+            }
+        }, 1);
+    }
 
 
     function paramsSquare(rotateY, rotateX, rotateZ, translateY, translateX, translateZ){
@@ -59,10 +84,6 @@ const move = function moveSquare(){
 }
 
 htmlElements.move.addEventListener('click', move);
-
-
-
-
 
 
 // document.querySelector('button').addEventListener('click', () => {
