@@ -3,8 +3,55 @@ html, body{
     width: 100%;
 }
 
-header{
-    height: 100px;
-    width: 100%;
-    background-color: brown;
+* {
+    box-sizing: border-box;
 }
+
+.container{
+    /* margin: 200px auto; */
+    position: relative;
+    width: inherit;
+    height: inherit;
+    /* perspective: 500px; */
+}
+.cube{
+    width: inherit;
+    height: inherit;
+    transform-style: preserve-3d;
+}
+.side{
+    position: absolute;
+    width: inherit;
+    height: inherit;
+    font-size: 50px;
+    text-align: center;
+    /* border: solid 10px black; */
+}
+.front{
+    transform: translateZ(0px);
+    border: solid 10px brown;
+}
+.back{
+    border: solid 10px green;
+}
+.right{
+    border: solid 10px blue;
+}
+.left{
+    border: solid 10px black;
+}
+
+/* p.coordinates,
+p.keycode{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    font-size: 50px;
+}
+p.keycode{
+    top: 0;    
+}
+button{
+    width: 50px;
+    height: 30px;
+} */
