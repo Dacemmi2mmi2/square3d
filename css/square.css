@@ -8,24 +8,23 @@ html, body{
 }
 
 .container{
-    /* margin: 200px auto; */
     position: relative;
     width: inherit;
     height: inherit;
-    /* perspective: 500px; */
 }
+
 .cube{
     width: inherit;
     height: inherit;
     transform-style: preserve-3d;
 }
+
 .side{
     position: absolute;
     width: inherit;
     height: inherit;
-    font-size: 50px;
+    font-size: 30px;
     text-align: center;
-    /* border: solid 10px black; */
 }
 .front{
     transform: translateZ(0px);
@@ -40,18 +39,3 @@ html, body{
 .left{
     border: solid 10px black;
 }
-
-/* p.coordinates,
-p.keycode{
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    font-size: 50px;
-}
-p.keycode{
-    top: 0;    
-}
-button{
-    width: 50px;
-    height: 30px;
-} */

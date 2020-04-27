@@ -5,37 +5,52 @@ const htmlElements = {
     back : document.querySelector('.back'),
     right : document.querySelector('.right'),
     left : document.querySelector('.left'),
+    move : document.querySelector('button'),
 }
+
 
 window.addEventListener('resize', () => {
-    styleHtml(window.innerWidth);
+    sizeScreen(window.innerWidth);
 });
 
-const styleHtml = function stylesForHtmlElements(width){
-    let styles = {
-        container : {
-            // width : htmlElements.container.style.width = window.innerWidth,
-            perspective : htmlElements.container.style.perspective = width + 'px',
-        },
-        back : {
-            transform : htmlElements.back.style.transform =  `rotateY(180deg) translateZ(${width}px)`,
-        },
-        left : {
-            transform : htmlElements.left.style.transform =  `rotateY(-90deg) translateZ(${width / 2}px) translateX(-${width / 2}px)`,
-        },
-        right : {
-            transform : htmlElements.right.style.transform =  `rotateY(90deg) translateZ(${width / 2}px) translateX(${width / 2}px)`,
-        },
-        // cube : {
-        //     width : htmlElements.cube.style.width = window.innerWidth,
-        // },
-        // side : {
-        //     width : htmlElements.cube.style.width = window.innerWidth,
-        // }
-    }
-}
-styleHtml(window.innerWidth);
+const sizeScreen = function sizeWidthScreen(width){
+    htmlElements.container.style.perspective = width + 'px';
+    htmlElements.back.style.transform =  `rotateY(180deg) translateZ(${width}px)`;
+    htmlElements.left.style.transform =  `rotateY(-90deg) translateZ(${width / 2}px) translateX(-${width / 2}px)`;
+    htmlElements.right.style.transform =  `rotateY(90deg) translateZ(${width / 2}px) translateX(${width / 2}px)`;
+    return width;
 
+}
+sizeScreen(window.innerWidth);
+
+const move = function moveSquare(){
+    let variables = {
+        rotateX : 0,
+        rotateY : 0,
+        rotateZ : 0,
+        translateZ : 0,
+        translateX : 0,
+        translateY : 0,
+    }
+
+    let moveAxisZ = setInterval(() => {
+        paramsSquare(variables.rotateY, variables.rotateX, variables.rotateZ, variables.translateY, variables.translateX, variables.translateZ);
+        if(variables.translateZ === -window.innerWidth){
+            clearInterval(moveAxisZ);
+            // rotateSquare();
+        }else{
+            variables.translateZ -= 1;
+        }
+    }, 1);
+
+
+    function paramsSquare(rotateY, rotateX, rotateZ, translateY, translateX, translateZ){
+        htmlElements.cube.style.transform = `rotateY(${rotateY}deg) rotateX(${rotateX}deg) rotateZ(${rotateZ}deg) translateY(${translateY}px) translateX(${translateX}px) translateZ(${translateZ}px)`;
+    }
+    
+}
+
+htmlElements.move.addEventListener('click', move);
 
 
 
