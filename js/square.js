@@ -22,7 +22,6 @@ const globalVariables = {
 
 const widthwindow = window.addEventListener('resize', () => {
     sizeScreen(window.innerWidth);
-    // move('resize');
 });
 
 
@@ -64,7 +63,7 @@ const move = function moveSquare(paramCall){
             }
         }, 1);
     }
-    paramCall === 'click' ? moveAxisZ() : '';
+    moveAxisZ();
 
     function rotateSquare(){
         let rotate = setInterval(() => {
@@ -94,29 +93,6 @@ const move = function moveSquare(paramCall){
             }
         }, 1);
     }
-
-    // function changchangeParamsIfMoveWsaBe(){
-    //     let i = 0;
-    //     while(window.innerWidth + variables.translateZ > variables.paramWidthScreen){
-    //         variables.translateZ -= variables.paramWidthScreen;
-    //         window.innerWidth + variables.translateZ > variables.paramWidthScreen ? '' : variables.translateZ = -window.innerWidth;
-    //         i++;
-    //     }
-    //     for(let i = 1; i <= 90; i++){
-    //         variables.translateZ += window.innerWidth * 1.5 / 90;
-    //         variables.translateX += window.innerWidth * 1.5 / 90;
-    //         variables.rotateY ++ ;
-    //     }
-    //     let j = 0;
-    //     while(variables.translateX - window.innerWidth / 2 > variables.paramWidthScreen){
-    //         variables.translateX -= variables.paramWidthScreen;
-    //         variables.translateX - window.innerWidth / 2 < variables.paramWidthScreen ? variables.translateX = window.innerWidth / 2 : '';
-    //         j++;
-    //     }
-    //     paramsSquare(variables.rotateY, variables.rotateX, variables.rotateZ, variables.translateY, variables.translateX, variables.translateZ);
-    // }
-    // changchangeParamsIfMoveWsaBe();
-    // paramCall === 'resize' ? changchangeParamsIfMoveWsaBe() : '';
 }
 
 
@@ -125,70 +101,3 @@ const paramsSquare = function applyParamsSquare(rotateY, rotateX, rotateZ, trans
 }
 
 htmlElements.moveFront.addEventListener('click', () => {move('click')});
-
-htmlElements.moveLeft.addEventListener('click', () => {move('click')});
-
-
-// document.querySelector('button').addEventListener('click', () => {
-//     let htmlElements = {
-//         cube : document.querySelector('.cube'),
-//         coordinates : document.querySelector('.coordinates'),
-//         keycode : document.querySelector('.keycode'),
-//     }
-
-//     let variables = {
-//         rotateX : 0,
-//         rotateY : 0,
-//         rotateZ : 0,
-//         translateZ : 0,
-//         translateX : 0,
-//         translateY : 0,
-//     }
-
-//     let moveZ = setInterval(() => {
-//         paramsSquare(variables.rotateY, variables.rotateX, variables.rotateZ, variables.translateY, variables.translateX, variables.translateZ);
-
-//         if(variables.translateZ === -300){
-//             clearInterval(moveZ);
-//             rotateSquare();
-//         }else{
-//             variables.translateZ -= 2;
-//         }
-//     }, 1);
-
-//     function rotateSquare(){
-//         let rotate = setInterval(() => {
-//             paramsSquare(variables.rotateY, variables.rotateX, variables.rotateZ, variables.translateY, variables.translateX, variables.translateZ);
-
-//             if(variables.rotateY % 2){
-//                 variables.translateZ += 4;
-//                 variables.translateX += 4;
-//             }else{
-//                 variables.translateZ += 6;
-//                 variables.translateX += 6;
-//             }
-//             variables.rotateY ++ ;
-//             if(variables.rotateY === 90){
-//                 clearInterval(rotate);
-//                 moveXline();
-//             }
-//         }, 1);
-//     }
-
-//     function moveXline(){
-//         let moveX = setInterval(() => {
-//             paramsSquare(variables.rotateY, variables.rotateX, variables.rotateZ, variables.translateY, variables.translateX, variables.translateZ);
-//             if(variables.translateX === 150){
-//                 clearInterval(moveX);
-//             }else{
-//                 variables.translateX -= 2;
-//             }
-//         }, 1);
-//     }
-
-//     function paramsSquare(rotateY, rotateX, rotateZ, translateY, translateX, translateZ){
-//         htmlElements.cube.style.transform = `rotateY(${rotateY}deg) rotateX(${rotateX}deg) rotateZ(${rotateZ}deg) translateY(${translateY}px) translateX(${translateX}px) translateZ(${translateZ}px)`;
-
-//         htmlElements.coordinates.innerHTML = `rotateY(${rotateY}deg) rotateX(${rotateX}deg) rotateZ(${rotateZ}deg) translateY(${translateY}px) translateX(${translateX}px) translateZ(${translateZ}px)`;
-//     }
-// });
