@@ -5,18 +5,24 @@ const htmlElements = {
     back : document.querySelector('.back'),
     right : document.querySelector('.right'),
     left : document.querySelector('.left'),
-    move : document.querySelector('button'),
+    moveFront : document.querySelector('.front>button'),
+    moveLeft : document.querySelector('.left>button'),
 }
 
 
 const globalVariables = {
-    countCallsMoveSquare : 0,
+    rotateX : 0,
+    rotateY : 0,
+    rotateZ : 0,
+    translateZ : 0,
+    translateX : 0,
+    translateY : 0
 }
 
 
 const widthwindow = window.addEventListener('resize', () => {
     sizeScreen(window.innerWidth);
-    move('resize');
+    // move('resize');
 });
 
 
@@ -78,6 +84,10 @@ const move = function moveSquare(paramCall){
             paramsSquare(variables.rotateY, variables.rotateX, variables.rotateZ, variables.translateY, variables.translateX, variables.translateZ);
             if(variables.translateX === window.innerWidth / 2){
                 clearInterval(moveX);
+                for (let item in variables) {
+                    variables[item] = 0;
+                }
+                paramsSquare(variables.rotateY, variables.rotateX, variables.rotateZ, variables.translateY, variables.translateX, variables.translateZ);
             }else{
                 variables.translateX -= variables.paramWidthScreen;
                 variables.translateX - window.innerWidth / 2 < variables.paramWidthScreen ? variables.translateX = window.innerWidth / 2 : '';
@@ -85,29 +95,28 @@ const move = function moveSquare(paramCall){
         }, 1);
     }
 
-    function changchangeParamsIfMoveWsaBe(){
-        let i = 0;
-        while(window.innerWidth + variables.translateZ > variables.paramWidthScreen){
-            variables.translateZ -= variables.paramWidthScreen;
-            window.innerWidth + variables.translateZ > variables.paramWidthScreen ? '' : variables.translateZ = -window.innerWidth;
-            i++;
-        }
-        for(let i = 1; i <= 90; i++){
-            variables.translateZ += window.innerWidth * 1.5 / 90;
-            variables.translateX += window.innerWidth * 1.5 / 90;
-            variables.rotateY ++ ;
-        }
-        let j = 0;
-        while(variables.translateX - window.innerWidth / 2 > variables.paramWidthScreen){
-            variables.translateX -= variables.paramWidthScreen;
-            variables.translateX - window.innerWidth / 2 < variables.paramWidthScreen ? variables.translateX = window.innerWidth / 2 : '';
-            j++;
-        }
-        paramsSquare(variables.rotateY, variables.rotateX, variables.rotateZ, variables.translateY, variables.translateX, variables.translateZ);
-    }
-    paramCall === 'resize' ? changchangeParamsIfMoveWsaBe() : '';
-
-    // console.log(variables.rotateY, variables.rotateX, variables.rotateZ, variables.translateY, variables.translateX, variables.translateZ);
+    // function changchangeParamsIfMoveWsaBe(){
+    //     let i = 0;
+    //     while(window.innerWidth + variables.translateZ > variables.paramWidthScreen){
+    //         variables.translateZ -= variables.paramWidthScreen;
+    //         window.innerWidth + variables.translateZ > variables.paramWidthScreen ? '' : variables.translateZ = -window.innerWidth;
+    //         i++;
+    //     }
+    //     for(let i = 1; i <= 90; i++){
+    //         variables.translateZ += window.innerWidth * 1.5 / 90;
+    //         variables.translateX += window.innerWidth * 1.5 / 90;
+    //         variables.rotateY ++ ;
+    //     }
+    //     let j = 0;
+    //     while(variables.translateX - window.innerWidth / 2 > variables.paramWidthScreen){
+    //         variables.translateX -= variables.paramWidthScreen;
+    //         variables.translateX - window.innerWidth / 2 < variables.paramWidthScreen ? variables.translateX = window.innerWidth / 2 : '';
+    //         j++;
+    //     }
+    //     paramsSquare(variables.rotateY, variables.rotateX, variables.rotateZ, variables.translateY, variables.translateX, variables.translateZ);
+    // }
+    // changchangeParamsIfMoveWsaBe();
+    // paramCall === 'resize' ? changchangeParamsIfMoveWsaBe() : '';
 }
 
 
@@ -115,7 +124,9 @@ const paramsSquare = function applyParamsSquare(rotateY, rotateX, rotateZ, trans
     htmlElements.cube.style.transform = `rotateY(${rotateY}deg) rotateX(${rotateX}deg) rotateZ(${rotateZ}deg) translateY(${translateY}px) translateX(${translateX}px) translateZ(${translateZ}px)`;
 }
 
-htmlElements.move.addEventListener('click', () => {move('click')});
+htmlElements.moveFront.addEventListener('click', () => {move('click')});
+
+htmlElements.moveLeft.addEventListener('click', () => {move('click')});
 
 
 // document.querySelector('button').addEventListener('click', () => {
