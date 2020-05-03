@@ -1,0 +1,100 @@
+.containerServices{
+    width: 100%;
+    height: 100%;
+    background-image: url('../../img/mainFirst.png');
+    background-size: cover;
+}
+
+.contentServices{
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+}
+
+.blockTitleServices{
+    padding: 0 0 0 15%;
+    color: white;
+    font-size: 120px;
+    margin: 0 0 -18px 0;
+}
+
+.blockContentServices{
+    display: flex;
+    overflow: hidden;
+    height: 100px;
+    justify-content: space-between;
+    background-color: #fff;
+    padding: 20px 0 20px 0;
+    transition: all .5s;
+}
+
+.listServices{
+    width: 30%;
+    height: 700px;
+    display: flex;
+    align-items: center;
+    transition: all .5s;
+    filter: opacity(0%);
+    padding: 0 0 0 15%;
+}
+
+.listServices li{
+    margin: 10px 0 10px 0;
+    padding: 10px 0 10px 0;
+    font-size: 30px;
+    font-weight: bold;
+}
+.listServices li:nth-child(8){
+    display: block;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    padding: 0.5rem 2rem;
+    background-image: url('../img/bgText.svg');
+}
+.listServices span{
+    font-size: 50px;
+    margin: 0 15px 0 0;
+}
+
+
+/* =========== description ========= */
+
+
+.descriprionSecrices{
+    padding: 0 15% 0 0;
+    filter: opacity(0%);
+    transition: all .5s;
+    width: 40%;
+}
+
+.plaseForCubeServices{
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.cubeServices{
+    width: inherit;
+    height: inherit;
+    transform-style: preserve-3d;
+}
+.sideServices{
+    box-sizing: border-box;
+    position: absolute;
+    width: inherit;
+    height: inherit;
+}
+.frontServices{
+    transform: translateZ(0px);
+    border: solid 10px brown;
+}
+.backServices{
+    border: solid 10px green;
+}
+.rightServices{
+    border: solid 10px blue;
+}
+.leftServices{
+    border: solid 10px black;
+}

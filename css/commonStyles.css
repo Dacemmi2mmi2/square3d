@@ -1,0 +1,109 @@
+html, body{
+    height: 100%;
+    width: 100%;
+}
+
+body{
+    background: url('../img/html-code.jpg');
+    background-size: cover;
+}
+
+* {
+    font-family: Arial, Helvetica, sans-serif;
+    user-select: none;
+    box-sizing: border-box;
+}
+
+.container{
+    position: relative;
+    width: inherit;
+    height: inherit;
+}
+
+.cube{
+    width: inherit;
+    height: inherit;
+    transform-style: preserve-3d;
+}
+
+.side{
+    position: absolute;
+    width: inherit;
+    height: inherit;
+}
+.front{
+    transform: translateZ(0px);
+}
+
+.main{
+    background-color: rgba(0, 0, 0, .5);
+    width: 100%;
+    height: 100%;
+}
+.navigation{
+    background-color: rgba(0,0,0, .7);
+    padding: 20px 0 0 20px;
+    width: 300px;
+}
+.navigation .logo text{
+    stroke: red;
+    fill: white;
+    font-size: 30px;
+    font-weight: bold;
+    cursor: pointer;
+}
+.navigation ul{
+    padding: 20px 0 20px 20px;
+    width: 100%;
+    color: white;
+    font-size: 30px;
+}
+.navigation ul li{
+    cursor: pointer;
+    padding: 10px 0 0 0;
+    transition: all .3s;
+}
+.navigation ul li:last-child{
+    padding: 10px 0 10px 0;
+}
+.navigation ul li:hover{
+    color: lightgray;
+}
+
+.changeLang{
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100px;
+    background-color: rgba(0,0,0, .7);
+}
+
+.changeLang .option{
+    cursor: pointer;
+    transition: all .5s;
+    font-size: 25px;
+    padding: 20px 20px 20px 20px;
+    color: white;
+}
+.changeLang .option:last-child{
+    padding: 0px 20px 20px 20px;
+}
+.changeLang .option:hover{
+    color: lightgray;
+}
+.changeLang .option span{
+    color: red;
+    font-size: 25px;
+    font-weight: bold;
+    padding: 0 0 0 10px;
+}
+
+.back{
+    border: solid 10px green;
+}
+.right{
+    border: solid 10px blue;
+}
+.left{
+    border: solid 10px black;
+}

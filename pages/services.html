@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="services.css">
+    <title>services</title>
+</head>
+<body>
+    <main class="services">
+        <nav class="navigation">
+            <svg width='300' height='100' class="logo">
+                <text x="20" y="55">&ltANY-WEB/&gt</text>
+            </svg>
+            <ul>
+                <li>О нас</li>
+                <li>Услуги</li>
+                <li>Потрфолио</li>
+                <li>Контакты</li>
+            </ul>
+        </nav>
+        <div class="changeLang">
+            <div class="select">
+                <div class="option">RU</div>
+                <div class="option">EN<span>&#10004;</span></div>
+            </div>
+        </div>
+        <section class="contentServices">
+            <div class="blockTitleServices">
+                <h2>Services</h2>
+            </div>
+            <div class="blockContentServices">
+                <div class="listServices">
+                    <ul>
+                        <li><span>1.</span>Интернет магазин</li>
+                        <li><span>2.</span>Портфолио</li>
+                        <li><span>3.</span>Блог</li>
+                        <li><span>4.</span>Форум</li>
+                        <li><span>5.</span>Развекательный ресурс</li>
+                        <li><span>6.</span>Социальные сети</li>
+                        <li><span>7.</span>Лендинг</li>
+                        <li><span>8.</span>Мобильные приложения</li>
+                    </ul>
+                </div>
+                <div class="descriprionSecrices">
+                    <div class="plaseForCubeServices">
+                        <div class="cubeServices">
+                            <div class="sideServices frontServices"></div>
+                            <div class="sideServices leftServices"></div>
+                            <div class="sideServices rightServices"></div>
+                            <div class="sideServices backServices"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <script>
+        const htmlElements = {
+            container : document.querySelector('.containerServices'),
+            cube : document.querySelector('.cubeServices'),
+            front : document.querySelector('.front'),
+            back : document.querySelector('.back'),
+            right : document.querySelector('.right'),
+            left : document.querySelector('.left'),
+            contentServices : document.querySelector('.contentServices'),
+            blockContentServices : document.querySelector('.blockContentServices'),
+            nav : document.querySelector('.navigation'),
+            listServ : document.querySelector('.listServices'),
+            descrServ : document.querySelector('.descriprionSecrices')
+        }
+        const sizeScreen = function sizeWidthScreen(width){
+            htmlElements.container.style.perspective = width + 'px';
+            htmlElements.back.style.transform =  `rotateY(180deg) translateZ(${width}px)`;
+            htmlElements.left.style.transform =  `rotateY(-90deg) translateZ(${width / 2}px) translateX(-${width / 2}px)`;
+            htmlElements.right.style.transform =  `rotateY(90deg) translateZ(${width / 2}px) translateX(${width / 2}px)`;
+        }
+        sizeScreen(htmlElements.cube.offsetWidth);
+
+        window.addEventListener('wheel', (e) => {
+            move(e.deltaY);
+        });
+        window.addEventListener('keyup', (ev) => {
+            move(ev.keyCode);
+        })
+        function move(a){
+            if(a === 100 || a === 40){      
+                htmlElements.blockContentServices.style.height = 750 + 'px';
+                htmlElements.nav.style.filter = 'opacity(0%)';
+                htmlElements.listServ.style.filter = 'opacity(100%)';
+                htmlElements.descrServ.style.filter = 'opacity(100%)';
+            }
+            if(a < 0 || a === 38){
+                htmlElements.nav.style.filter = 'opacity(100%)';
+                htmlElements.listServ.style.filter = 'opacity(0%)';
+                htmlElements.descrServ.style.filter = 'opacity(0%)';
+                htmlElements.blockContentServices.style.height = 100 + 'px';
+            }
+        }
+    </script>
+</body>
+</html>
+
+
+
+
+
+

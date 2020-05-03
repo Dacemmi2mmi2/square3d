@@ -1,0 +1,65 @@
+.containerMainPage{
+    animation: changeImg 20s linear infinite;
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+}
+
+@keyframes changeImg {
+    0%{
+        background: url('../../img/mainSecond.jpeg');
+        background-size: cover;
+    }
+    25%{
+        background: url('../../img/mainSecond.jpeg');
+        background-size: cover;
+    }
+    33.33%{
+        background: url('../../img/mainThird.jpg');
+        background-size: cover;
+    }
+    58%{
+        background: url('../../img/mainThird.jpg');
+        background-size: cover;
+    }
+    66.66%{
+        background: url('../../img/mainFourth.jpg');
+        background-size: cover;
+    }
+    92%{
+        background: url('../../img/mainFourth.jpg');
+        background-size: cover;
+    }
+    100%{
+        background: url('../../img/mainSecond.jpeg');
+        background-size: cover;
+    }
+}
+
+.contentMainPage{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 400px;
+}
+
+.blockTitleMainPage{
+    padding: 0 0 0 15%;
+    color: white;
+    font-size: 120px;
+    margin: 0 0 -18px 0;
+}
+
+.blockContentMainPage{
+    overflow: hidden;
+    height: 74.5%;
+    display: flex;
+    align-items: center;
+    background-color: #fff;
+}
+
+.blockContentMainPage p{
+    font-size: 40px;
+    padding: 0 0 0 15%;
+    color: gray;
+}

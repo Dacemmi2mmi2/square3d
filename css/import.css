@@ -1,2 +1,4 @@
 @import url('reset.css');
-@import url('square.css');
+@import url('commonStyles.css');
+@import url('mainPage/mainPage.css');
+@import url('servicesPage/services.css');

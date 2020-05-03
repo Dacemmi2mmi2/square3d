@@ -86,15 +86,17 @@ body{
     margin: 0 0 -18px 0;
 }
 .blockContentMainPage{
+    overflow: hidden;
     height: 74.5%;
     display: flex;
+    align-items: center;
     background-color: #fff;
 }
 
 .blockContentMainPage p{
     font-size: 40px;
-    padding: 0 0 0 40px;
-    color: gray
+    padding: 0 0 0 15%;
+    color: gray;
 }
 
 
