@@ -79,6 +79,7 @@ body{
 }
 
 .changeLang .option{
+    display: flex;
     cursor: pointer;
     transition: all .5s;
     font-size: 25px;
@@ -104,6 +105,6 @@ body{
 .right{
     border: solid 10px blue;
 }
-.left{
+/* .left{
     border: solid 10px black;
-}
+} */

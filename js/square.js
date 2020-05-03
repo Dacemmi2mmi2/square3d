@@ -11,7 +11,7 @@ const htmlElements = {
 
 
 const globalVariables = {
-    rotateX : 0,
+    countAddPage : 0,
     rotateY : 0,
     rotateZ : 0,
     translateZ : 0,
@@ -21,7 +21,7 @@ const globalVariables = {
 
 
 const createPage = function createHtmlPages(htmlPage){
-    let allElements = htmlPage.mainPage.ru.replace(/[^a-zа-я0-9'=\s-\/&#;+]/gmi, '\n').split('\n').filter(item => {return item}),
+    let allElements = htmlPage.mainPage.ru.replace(/[^a-zа-я0-9'=\s-\/&#;+✔]/gmi, '\n').split('\n').filter(item => {return item}),
         allElementsSplit = [],
         parent = {},
         parentStrig = [],
@@ -34,7 +34,7 @@ const createPage = function createHtmlPages(htmlPage){
         allElementsSplit.push(allElements[i].split(' '));
     }
 
-    rootElement = htmlElements.front;
+    globalVariables.countAddPage === 0 ? rootElement = htmlElements.front : rootElement = htmlElements.left;
     parent[0] = rootElement;
     parentStrig.push(htmlElements.front.tagName);
     addEl = rootElement;
@@ -69,7 +69,12 @@ const createPage = function createHtmlPages(htmlPage){
             }
         }
     }
+    while(rootElement.firstChild){
+        rootElement.firstChild.remove();
+    }
     rootElement.appendChild(parent[Object.keys(parent)[Object.keys(parent).length - 1]]);
+    globalVariables.countAddPage ++ ;
+    globalVariables.countAddPage === 2 ? globalVariables.countAddPage = 0 : '';
 }
 fetch('js/pages.json').then((response) => {return response.json()}).then((data) => {createPage(data)});
 
@@ -156,7 +161,10 @@ const paramsGlobalSquare = function applyParamsGlobalSquare(rotateY, rotateX, ro
 
 htmlElements.mainContainer.addEventListener('click', (ev) => {
     if(ev.target.closest('main')){
-        ev.target.className === 'textLogo' ? move() : '';
+        if(ev.target.className === 'textLogo'){
+            move();
+            fetch('js/pages.json').then((response) => {return response.json()}).then((data) => {createPage(data)});
+        }
     }
 });
 
