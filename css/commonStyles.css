@@ -51,6 +51,7 @@ body{
     font-size: 30px;
     font-weight: bold;
     cursor: pointer;
+    color: white;
 }
 .navigation ul{
     padding: 20px 0 20px 20px;
@@ -71,6 +72,7 @@ body{
 }
 
 .changeLang{
+    display: block;
     position: absolute;
     top: 0;
     right: 0;
@@ -98,13 +100,3 @@ body{
     font-weight: bold;
     padding: 0 0 0 10px;
 }
-
-.back{
-    border: solid 10px green;
-}
-.right{
-    border: solid 10px blue;
-}
-/* .left{
-    border: solid 10px black;
-} */

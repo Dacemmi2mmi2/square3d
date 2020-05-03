@@ -79,7 +79,10 @@
     height: inherit;
     transform-style: preserve-3d;
 }
-.sideServices{
+.frontServices,
+.backServices,
+.rightServices,
+.leftServices{
     box-sizing: border-box;
     position: absolute;
     width: inherit;

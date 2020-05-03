@@ -1,0 +1,39 @@
+@media only screen and (max-height: 500px){
+    .contentMainPage{
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        width: 60%;
+        height: auto;
+    }
+    
+    .blockTitleMainPage{
+        padding: 0 0 0 5%;
+        color: white;
+        font-size: 65px;
+        margin: 0 0 -12px 0;
+    }
+    
+    .blockContentMainPage{
+        overflow: hidden;
+        height: 74.5%;
+        display: flex;
+        align-items: center;
+        background-color: #fff;
+    }
+    
+    .blockContentMainPage p{
+        font-size: 20px;
+        padding: 50px 0 50px 0;
+        margin: 0 0 0 5%;
+        color: black;
+    }
+    
+    .blockContentMainPage span{
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-size: cover;
+        padding: 0.5rem 1rem;
+        background-image: url('../../img/bgText.svg');
+    }
+}

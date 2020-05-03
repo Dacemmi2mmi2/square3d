@@ -12,16 +12,11 @@ const htmlElements = {
 
 const globalVariables = {
     countAddPage : 0,
-    rotateY : 0,
-    rotateZ : 0,
-    translateZ : 0,
-    translateX : 0,
-    translateY : 0
 }
 
 
-const createPage = function createHtmlPages(htmlPage){
-    let allElements = htmlPage.mainPage.ru.replace(/[^a-zа-я0-9'=\s-\/&#;+✔]/gmi, '\n').split('\n').filter(item => {return item}),
+const createPage = function createHtmlPages(htmlPage, htmlItems){
+    let allElements = htmlPage.replace(/[^a-zа-я0-9'=\s-\/&#;+✔]/gmi, '\n').split('\n').filter(item => {return item}),
         allElementsSplit = [],
         parent = {},
         parentStrig = [],
@@ -41,7 +36,7 @@ const createPage = function createHtmlPages(htmlPage){
 
     for (let i = 0; i < allElementsSplit.length - 1; i++){
         let check;
-        htmlPage.htmlElements.filter(item => {return item === allElementsSplit[i][0] ? check = true : ''});
+        htmlItems.filter(item => {return item === allElementsSplit[i][0] ? check = true : ''});
         if (check){
             addEl = parent[Object.keys(parent)[Object.keys(parent).length - 1]];
             someEl = document.createElement(allElementsSplit[i][0]);
@@ -76,7 +71,7 @@ const createPage = function createHtmlPages(htmlPage){
     globalVariables.countAddPage ++ ;
     globalVariables.countAddPage === 2 ? globalVariables.countAddPage = 0 : '';
 }
-fetch('js/pages.json').then((response) => {return response.json()}).then((data) => {createPage(data)});
+fetch('js/pages.json').then((response) => {return response.json()}).then((data) => {createPage(data.mainPage.ru, data.htmlItems)});
 
 
 const widthwindow = window.addEventListener('resize', () => {
@@ -155,15 +150,20 @@ const move = function moveSquare(){
     }
 }
 
+
 const paramsGlobalSquare = function applyParamsGlobalSquare(rotateY, rotateX, rotateZ, translateY, translateX, translateZ){
     htmlElements.cube.style.transform = `rotateY(${rotateY}deg) rotateX(${rotateX}deg) rotateZ(${rotateZ}deg) translateY(${translateY}px) translateX(${translateX}px) translateZ(${translateZ}px)`;
 }
 
+
 htmlElements.mainContainer.addEventListener('click', (ev) => {
     if(ev.target.closest('main')){
+        if(ev.target.firstChild.data === 'Услуги '){
+            console.log(ev.target.firstChild.data);
+        }
         if(ev.target.className === 'textLogo'){
             move();
-            fetch('js/pages.json').then((response) => {return response.json()}).then((data) => {createPage(data)});
+            fetch('js/pages.json').then((response) => {return response.json()}).then((data) => {createPage(data.mainPage.ru, data.htmlItems)});
         }
     }
 });
