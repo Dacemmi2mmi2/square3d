@@ -1,8 +1,9 @@
-@media only screen and (max-width: 500px){
+@media only screen and (max-height: 500px){
     .navigation{
         background-color: rgba(0,0,0, .7);
         padding: 20px 0 0 20px;
-        width: 100%;
+        width: 40%;
+        height: 100%;
     }
     .navigation .logo text{
         stroke: red;
@@ -34,14 +35,14 @@
         position: absolute;
         top: 0;
         right: 0;
-        width: 100px;
-        background-color: rgba(0,0,0, .0);
-    }
-
-    .select{
-        display: block;
+        width: auto;
+        background-color: rgba(0,0,0, .7);
     }
     
+    .select{
+        display: flex;
+    }
+
     .changeLang .option{
         display: flex;
         cursor: pointer;
@@ -51,7 +52,7 @@
         color: white;
     }
     .changeLang .option:last-child{
-        padding: 0px 0px 20px 20px;
+        padding: 20px 20px 20px 20px;
     }
     .changeLang .option:hover{
         color: lightgray;
