@@ -142,6 +142,9 @@ const move = function moveSquare(pageHtml, listHtmlElements){
                 for (let item in variables) {
                     variables[item] = 0;
                 }
+                while(htmlElements.left.firstChild){
+                    htmlElements.left.firstChild.remove();
+                }
                 paramsGlobalSquare(variables.rotateY, variables.rotateX, variables.rotateZ, variables.translateY, variables.translateX, variables.translateZ);
             }else{
                 variables.translateX -= variables.paramWidthScreen;

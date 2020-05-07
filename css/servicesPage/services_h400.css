@@ -1,0 +1,70 @@
+@media only screen and (max-height: 400px){
+    .containerServices{
+        width: 100%;
+        height: 100%;
+        background-image: url('../../img/mainFirst.png');
+        background-size: cover;
+    }
+    
+    .contentServices{
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        margin: 0 0 0 40%;
+        width: 60%;
+    }
+    
+    .blockTitleServices{
+        padding: 0 0 0 15%;
+        color: white;
+        font-size: 65px;
+        margin: 0 0 -12px 0;
+    }
+    
+    .blockContentServices{
+        overflow: auto;
+        display: flex;
+        height: 180px;
+        justify-content: space-between;
+        background-color: #fff;
+        padding: 20px 0 20px 0;
+        transition: all .5s;
+    }
+
+    .listDescriptionServices>div:first-child>div:first-child{
+        margin: 0 0 5px 0
+    }
+
+    .listDescriptionServices>div>div:first-child{
+        display: block;
+        margin: 12px 0 5px 0;
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-size: cover;
+        padding: 0.5rem 2rem;
+        background-image: url('../../img/bgText.svg');
+    }
+
+    .listDescriptionServices>div>div:first-child span{
+        font-weight: bold;
+    }
+
+    .listDescriptionServices>div>div:nth-child(2){
+        padding: 0 10px 0 10px;
+        text-align: justify;
+        line-height: 1.2;
+    }
+    
+    .listDescriptionServices>div:last-child>div:last-child{
+        padding: 0 10px 20px 10px;
+    }
+    /* {
+        display: block;
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-size: cover;
+        padding: 0.5rem 2rem;
+        background-image: url('../img/bgText.svg');
+    } */
+    
+}

@@ -1,14 +1,14 @@
 @import url('reset.css');
 @import url('commonStyles.css');
 @import url('commonStyles_max500.css');
-@import url('commonStyles_h500.css');
+@import url('commonStyles_h400.css');
 
 @import url('mainPage/mainPage.css');
 @import url('mainPage/mainPage_max900.css');
 @import url('mainPage/mainPage_max500.css');
-@import url('mainPage/mainPage_h350.css');
+@import url('mainPage/mainPage_h400.css');
 
 /* @import url('servicesPage/services.css'); */
 /* @import url('servicesPage/services_max900.css'); */
 @import url('servicesPage/services_max500.css');
-@import url('servicesPage/services_h500.css');
+@import url('servicesPage/services_h400.css');
