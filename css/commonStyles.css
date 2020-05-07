@@ -30,6 +30,7 @@ body{
     position: absolute;
     width: inherit;
     height: inherit;
+    backface-visibility: hidden;
 }
 .front{
     transform: translateZ(0px);
