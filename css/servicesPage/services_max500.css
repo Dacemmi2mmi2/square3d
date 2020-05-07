@@ -29,6 +29,7 @@
     }
 
     .listDescriptionServices>div>div:first-child{
+        width: 100%;
         font-size: 30px;
         display: block;
         background-repeat: no-repeat;

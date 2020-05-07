@@ -1,31 +1,56 @@
 .containerServices{
     width: 100%;
     height: 100%;
+    overflow: auto;
     background-image: url('../../img/mainFirst.png');
     background-size: cover;
 }
-
+    
 .contentServices{
     width: 100%;
-    position: absolute;
-    bottom: 0;
 }
-
+    
 .blockTitleServices{
     padding: 0 0 0 15%;
     color: white;
     font-size: 120px;
     margin: 0 0 -18px 0;
 }
-
+    
 .blockContentServices{
     display: flex;
     justify-content: space-between;
     background-color: #fff;
-    padding: 20px 0 20px 0;
+    padding: 20px 15% 20px 15%;
     transition: all .5s;
 }
 
+.listDescriptionServices>div>div:first-child{
+    width: 30%;
+    font-size: 30px;
+    display: block;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    padding: 0.5rem 2rem;
+    background-image: url('../../img/bgText.svg');
+}
+
+.listDescriptionServices>div>div:first-child span{
+    font-weight: bold;
+    font-size: 35px;
+}
+
+.listDescriptionServices>div>div:last-child{
+    font-size: 20px;
+    text-align: justify;
+    line-height: 1.2;
+    padding: 10px 20px 20px 20px;
+}
+    
+.listDescriptionServices>div:last-child>div:last-child{
+    padding: 10px 20px 0px 20px;
+}
 /* {
     display: block;
     background-repeat: no-repeat;
@@ -34,3 +59,4 @@
     padding: 0.5rem 2rem;
     background-image: url('../img/bgText.svg');
 } */
+    

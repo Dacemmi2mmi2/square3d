@@ -15,7 +15,7 @@
     }
     
     .blockTitleServices{
-        padding: 0 0 0 15%;
+        padding: 0 0 0 5%;
         color: white;
         font-size: 65px;
         margin: 0 0 -12px 0;
@@ -36,6 +36,7 @@
     }
 
     .listDescriptionServices>div>div:first-child{
+        width: 75%;
         display: block;
         margin: 12px 0 5px 0;
         background-repeat: no-repeat;
