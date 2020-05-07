@@ -15,9 +15,9 @@
     }
     
     .blockTitleServices{
-        padding: 0 0 0 5%;
+        padding: 0 0 0 2%;
         color: white;
-        font-size: 65px;
+        font-size: 60px;
         margin: 0 0 -12px 0;
     }
     
@@ -36,7 +36,8 @@
     }
 
     .listDescriptionServices>div>div:first-child{
-        width: 75%;
+        font-size: 20px;
+        width: 100%;
         display: block;
         margin: 12px 0 5px 0;
         background-repeat: no-repeat;
@@ -47,6 +48,7 @@
     }
 
     .listDescriptionServices>div>div:first-child span{
+        font-size: 25px;
         font-weight: bold;
     }
 
@@ -54,6 +56,7 @@
         padding: 0 10px 0 10px;
         text-align: justify;
         line-height: 1.2;
+        font-size: 15px;
     }
     
     .listDescriptionServices>div:last-child>div:last-child{

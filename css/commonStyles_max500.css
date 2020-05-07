@@ -39,10 +39,10 @@
     .changeLang{
         position: relative;
         top: -240px;
-        left: calc(100% - 100px);
+        right: calc(-100% + 100px);
         width: 100px;
         background-color: rgba(0,0,0, .0);
-        margin: 0 0 100px 0;
+        margin: 0 0 0 0;
     }
 
     .select{

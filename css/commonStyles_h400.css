@@ -32,6 +32,7 @@
     }
     
     .changeLang{
+        width: 100px;
         position: absolute;
         top: 0px;
         right: 0px;
@@ -39,21 +40,17 @@
         background-color: rgba(0,0,0, .7);
         margin: 0 0 0 0;
     }
-    
-    .select{
-        display: flex;
-    }
 
     .changeLang .option{
         display: flex;
         cursor: pointer;
         transition: all .5s;
-        font-size: 20px;
-        padding: 20px 0px 20px 20px;
+        font-size: 17px;
+        padding: 15px 0px 15px 15px;
         color: white;
     }
     .changeLang .option:last-child{
-        padding: 20px 20px 20px 20px;
+        padding: 15px 15px 15px 15px;
     }
     .changeLang .option:hover{
         color: lightgray;
@@ -62,6 +59,6 @@
         color: red;
         font-size: 20px;
         font-weight: bold;
-        padding: 0 0 0 10px;
+        /* padding: 0 0 0 10px; */
     }
 }
