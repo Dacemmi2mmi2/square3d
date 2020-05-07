@@ -44,6 +44,7 @@ body{
     background-color: rgba(0,0,0, .7);
     padding: 20px 0 0 20px;
     width: 300px;
+    height: auto;
 }
 .navigation .logo text{
     stroke: red;
@@ -73,10 +74,11 @@ body{
 
 .changeLang{
     position: absolute;
-    top: 0;
-    right: 0;
+    top: 0px;
+    right: 0px;
     width: 100px;
     background-color: rgba(0,0,0, .7);
+    margin: 0 0 0 0;
 }
 
 .select{

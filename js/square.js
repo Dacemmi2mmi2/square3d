@@ -16,7 +16,7 @@ const globalVariables = {
 
 
 const createPage = function createHtmlPages(htmlPage, htmlItems){
-    let allElements = htmlPage.replace(/[^a-zа-я0-9'=\s-\/&#;+✔]/gmi, '\n').split('\n').filter(item => {return item}),
+    let allElements = htmlPage.replace(/[^a-zа-я0-9'=\s-\/&#;+✔\.\?\,\!\(\)]/gmi, '\n').split('\n').filter(item => {return item}),
         allElementsSplit = [],
         parent = {},
         parentStrig = [],
@@ -88,7 +88,7 @@ const sizeScreen = function sizeWidthScreen(width){
 sizeScreen(window.innerWidth);
 
 
-const move = function moveSquare(){
+const move = function moveSquare(pageHtml, listHtmlElements){
     let variables = {
         rotateX : 0,
         rotateY : 0,
@@ -128,6 +128,7 @@ const move = function moveSquare(){
             variables.rotateY ++ ;
             if(variables.rotateY === 90){
                 clearInterval(rotate);
+                createPage(pageHtml, listHtmlElements);
                 moveAxisX();
             }
         }, 1);
@@ -156,14 +157,21 @@ const paramsGlobalSquare = function applyParamsGlobalSquare(rotateY, rotateX, ro
 }
 
 
+
+
 htmlElements.mainContainer.addEventListener('click', (ev) => {
     if(ev.target.closest('main')){
         if(ev.target.firstChild.data === 'Услуги '){
-            console.log(ev.target.firstChild.data);
+            fetch('js/pages.json').then((response) => {return response.json()}).then((data) => {
+                move(data.servicesPage.ru, data.htmlItems);
+                createPage(data.servicesPage.ru, data.htmlItems);
+            });
         }
         if(ev.target.className === 'textLogo'){
-            move();
-            fetch('js/pages.json').then((response) => {return response.json()}).then((data) => {createPage(data.mainPage.ru, data.htmlItems)});
+            fetch('js/pages.json').then((response) => {return response.json()}).then((data) => {
+                move(data.mainPage.ru, data.htmlItems);
+                createPage(data.mainPage.ru, data.htmlItems);
+            });
         }
     }
 });

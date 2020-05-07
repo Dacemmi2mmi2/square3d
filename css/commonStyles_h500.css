@@ -1,4 +1,4 @@
-@media only screen and (max-height: 500px){
+@media only screen and (max-height: 400px){
     .navigation{
         background-color: rgba(0,0,0, .7);
         padding: 20px 0 0 20px;
@@ -33,10 +33,11 @@
     
     .changeLang{
         position: absolute;
-        top: 0;
-        right: 0;
+        top: 0px;
+        right: 0px;
         width: auto;
         background-color: rgba(0,0,0, .7);
+        margin: 0 0 0 0;
     }
     
     .select{
