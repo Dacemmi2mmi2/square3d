@@ -16,7 +16,7 @@ const globalVariables = {
 
 
 const createPage = function createHtmlPages(htmlPage, htmlItems){
-    let allElements = htmlPage.replace(/[^a-zа-я0-9'=\s-\/&#:;+✔\.\?\,\!\(\)]/gmi, '\n').split('\n').filter(item => {return item}),
+    let allElements = htmlPage.replace(/[^a-zа-я0-9'=\s-\/&#%@:_;+✔\.\?\,\!\(\)]/gmi, '\n').split('\n').filter(item => {return item}),
         allElementsSplit = [],
         parent = {},
         parentStrig = [],
@@ -46,7 +46,7 @@ const createPage = function createHtmlPages(htmlPage, htmlItems){
             if(allElementsSplit[i].length > 1){
                 for (let j = 0; j < allElementsSplit[i].length; j++){
                     if(allElementsSplit[i][j].match(/=/)){
-                        someEl.setAttribute(allElementsSplit[i][j].replace(/'.{1,50}'/gi, '').slice(0, -1), allElementsSplit[i][j].replace(/^.{1,50}='/gi, '').slice(0, -1));
+                        someEl.setAttribute(allElementsSplit[i][j].replace(/'.{1,500}'/gi, '').slice(0, -1), allElementsSplit[i][j].replace(/^.{1,500}='/gi, '').slice(0, -1));
                     }
                 }
             }
@@ -180,6 +180,12 @@ htmlElements.mainContainer.addEventListener('click', (ev) => {
             fetch('js/pages.json').then((response) => {return response.json()}).then((data) => {
                 move(data.aboutUsPage.ru, data.htmlItems);
                 createPage(data.aboutUsPage.ru, data.htmlItems);
+            })
+        }
+        if(ev.target.firstChild.data === 'Контакты '){
+            fetch('js/pages.json').then((response) => {return response.json()}).then((data) => {
+                move(data.contactsPage.ru, data.htmlItems);
+                createPage(data.contactsPage.ru, data.htmlItems);
             })
         }
     }
