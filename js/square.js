@@ -16,7 +16,7 @@ const globalVariables = {
 
 
 const createPage = function createHtmlPages(htmlPage, htmlItems){
-    let allElements = htmlPage.replace(/[^a-zа-я0-9'=\s-\/&#;+✔\.\?\,\!\(\)]/gmi, '\n').split('\n').filter(item => {return item}),
+    let allElements = htmlPage.replace(/[^a-zа-я0-9'=\s-\/&#:;+✔\.\?\,\!\(\)]/gmi, '\n').split('\n').filter(item => {return item}),
         allElementsSplit = [],
         parent = {},
         parentStrig = [],
@@ -175,6 +175,12 @@ htmlElements.mainContainer.addEventListener('click', (ev) => {
                 move(data.mainPage.ru, data.htmlItems);
                 createPage(data.mainPage.ru, data.htmlItems);
             });
+        }
+        if(ev.target.firstChild.data === 'О '){
+            fetch('js/pages.json').then((response) => {return response.json()}).then((data) => {
+                move(data.aboutUsPage.ru, data.htmlItems);
+                createPage(data.aboutUsPage.ru, data.htmlItems);
+            })
         }
     }
 });

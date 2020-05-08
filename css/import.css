@@ -12,3 +12,8 @@
 @import url('servicesPage/services_max900.css');
 @import url('servicesPage/services_max500.css');
 @import url('servicesPage/services_h400.css');
+
+@import url('aboutUsPage/aboutUs.css');
+@import url('aboutUsPage/aboutUs_max900.css');
+@import url('aboutUsPage/aboutUs_max500.css');
+@import url('aboutUsPage/aboutUs_h400.css');

@@ -27,7 +27,7 @@
 
 .listDescriptionServices>div>div:first-child{
     width: 30%;
-    font-size: 30px;
+    font-size: 40px;
     display: block;
     background-repeat: no-repeat;
     background-position: center center;
@@ -38,18 +38,18 @@
 
 .listDescriptionServices>div>div:first-child span{
     font-weight: bold;
-    font-size: 35px;
+    font-size: 45px;
 }
 
 .listDescriptionServices>div>div:last-child{
-    font-size: 20px;
+    font-size: 25px;
     text-align: justify;
     line-height: 1.2;
-    padding: 10px 20px 20px 20px;
+    padding: 10px 20px 20px 25%;
 }
     
 .listDescriptionServices>div:last-child>div:last-child{
-    padding: 10px 20px 0px 20px;
+    padding: 10px 20px 0px 25%  ;
 }
 /* {
     display: block;

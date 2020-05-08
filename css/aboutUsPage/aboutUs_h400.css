@@ -1,0 +1,118 @@
+@media only screen and (max-height: 400px) {
+    .containerAboutUs{
+        height: 100%;
+        width: 100%;
+        background-image: url();
+        background-size: cover;
+    }
+
+    .contentAboutUs{
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        margin: 0 0 0 40%;
+        width: 60%;
+    }
+
+    .blockTitleAboutUs{
+        padding: 0 0 0 2%;
+        color: white;
+        font-size: 60px;
+        margin: 0 0 -12px 0;
+    }
+
+    .blockContentAboutUs{
+        overflow: auto;
+        display: flex;
+        flex-wrap: wrap;
+        height: 180px;
+        background-color: #fff;
+        padding: 10px 10px 10px 10px;
+    }
+
+    .descriptionAboutUs{
+        font-size: 16px;
+        text-align: justify;
+        line-height: 1.2;
+        margin: 0 0 20px 0;
+    }
+
+    .blockOfferAboutUs>.titleOfferAboutUs{
+        font-size: 16px;
+        font-weight: bold;
+        margin: 0 0 20px 0;
+    }
+
+    .offersAboutUs>div{
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+    
+    }
+
+    .offersAboutUs>div:nth-child(1)>div:first-child{
+        background-image: url('../../img/responsive.png');
+    }
+
+    .offersAboutUs>div:nth-child(2)>div:first-child{
+        background-image: url('../../img/hello.png');
+    }
+
+    .offersAboutUs>div:nth-child(3)>div:first-child{
+        background-image: url('../../img/design.png');
+    }
+
+    .offersAboutUs>div:nth-child(4)>div:first-child{
+        background-image: url('../../img/ok.png');
+    }
+
+    .offersAboutUs>div:nth-child(5)>div:first-child{
+        background-image: url('../../img/learn.png');
+    }
+
+    .offersAboutUs>div:nth-child(6)>div:first-child{
+        background-image: url('../../img/setings.png');
+    }
+
+    .offersAboutUs>div>div:first-child{
+        width: 80px;
+        height: 80px;
+        background-size: cover;
+    }
+
+    .offersAboutUs>div>h3{
+        font-size: 20px;
+        font-weight: bold;
+        display: block;
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-size: cover;
+        padding: 1rem 2rem 1rem 2rem;
+        background-image: url('../../img/bgText.svg');
+    }
+
+    .offersAboutUs>div>p{
+        font-size: 16px;
+        width: 100%;
+        text-align: justify;
+        padding: 10px 0 20px 0;
+        line-height: 1.2;
+        letter-spacing: .5px;
+    }
+
+
+
+
+
+
+    /* {
+        display: block;
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-size: cover;
+        padding: 0.5rem 2rem;
+        background-image: url('../img/bgText.svg');
+    } */
+
+
+}
