@@ -32,6 +32,7 @@ body{
     height: inherit;
     backface-visibility: hidden;
 }
+
 .front{
     transform: translateZ(0px);
 }
@@ -41,12 +42,14 @@ body{
     width: 100%;
     height: 100%;
 }
+
 .navigation{
     background-color: rgba(0,0,0, .7);
     padding: 20px 0 0 20px;
     width: 300px;
     height: 260px;
 }
+
 .navigation .logo text{
     stroke: red;
     fill: white;
@@ -55,20 +58,24 @@ body{
     cursor: pointer;
     color: white;
 }
+
 .navigation ul{
     padding: 20px 0 20px 20px;
     width: 100%;
     color: white;
     font-size: 30px;
 }
+
 .navigation ul li{
     cursor: pointer;
     padding: 10px 0 0 0;
     transition: all .3s;
 }
+
 .navigation ul li:last-child{
     padding: 10px 0 10px 0;
 }
+
 .navigation ul li:hover{
     color: lightgray;
 }
@@ -82,10 +89,6 @@ body{
     margin: 0 0 200px 0;
 }
 
-.select{
-    display: block;
-}
-
 .changeLang .option{
     display: flex;
     cursor: pointer;
@@ -94,12 +97,15 @@ body{
     padding: 20px 20px 20px 20px;
     color: white;
 }
+
 .changeLang .option:last-child{
     padding: 0px 20px 20px 20px;
 }
+
 .changeLang .option:hover{
     color: lightgray;
 }
+
 .changeLang .option span{
     color: red;
     font-size: 25px;

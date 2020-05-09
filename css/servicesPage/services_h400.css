@@ -62,13 +62,4 @@
     .listDescriptionServices>div:last-child>div:last-child{
         padding: 0 10px 20px 10px;
     }
-    /* {
-        display: block;
-        background-repeat: no-repeat;
-        background-position: center center;
-        background-size: cover;
-        padding: 0.5rem 2rem;
-        background-image: url('../img/bgText.svg');
-    } */
-    
 }

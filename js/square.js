@@ -180,13 +180,19 @@ htmlElements.mainContainer.addEventListener('click', (ev) => {
             fetch('js/pages.json').then((response) => {return response.json()}).then((data) => {
                 move(data.aboutUsPage.ru, data.htmlItems);
                 createPage(data.aboutUsPage.ru, data.htmlItems);
-            })
+            });
         }
         if(ev.target.firstChild.data === 'Контакты '){
             fetch('js/pages.json').then((response) => {return response.json()}).then((data) => {
                 move(data.contactsPage.ru, data.htmlItems);
                 createPage(data.contactsPage.ru, data.htmlItems);
-            })
+            });
+        }
+        if(ev.target.firstChild.data === 'Портфолио '){
+            fetch('js/pages.json').then((response) => {return response.json()}).then((data) => {
+                move(data.portfolioPage.ru, data.htmlItems);
+                createPage(data.portfolioPage.ru, data.htmlItems);
+            });
         }
     }
 });
